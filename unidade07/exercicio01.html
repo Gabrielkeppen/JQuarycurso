@@ -9,25 +9,32 @@
         
         <script src="jquery-3.2.1.min.js"></script>
         <script>
+			$( function(e) {			
+				$('#mostrar').click( mostrarObjeto )
+				$('#esconder').click( esconderObjeto )
+				$('#reverso').click( reverterObjeto )
+			})
 			
-            $(function(e) {
-                $('#janela').hide();
+			function esconderObjeto() {
+				$('#janela').hide(300);
+			}
 
-                $('#mostrar').click(function(e) {
-                    $('#janela').show();
-                });
+			function mostrarObjeto() {
+				$('#janela').show(2000, function (e) {
+					alert("finalizou a animação");
+				});
+			}
 
-                $('#esconder').click(function(e) {
-                    $('#janela').hide();
-                });
-             })
-
+			function reverterObjeto() {
+				$('#janela').toggle(300)
+			}
 		</script>        
     </head>
 
     <body>
         <input type="button" id="mostrar" 	value="Mostrar" />
         <input type="button" id="esconder" 	value="Esconder" />
+        <input type="button" id="reverso" 	value="Reverso" />
         
         <div id="janela"></div>
     </body>

@@ -10,7 +10,20 @@
         
         <script src="jquery-3.2.1.min.js"></script>
         <script>
-
+            function aplicarCorAzul() {
+                $('#janela').css('background-color','blue');
+            }
+            function aplicarCorVermelha() {
+                $('#janela').css('background-color','red');
+            }
+            function aplicarCorVerde() {
+                $('#janela').css('background-color','green');
+            }
+            $(function() {
+                $('#botaoazul').on("click", aplicarCorAzul);
+                $('#botaovermelho').on("click", aplicarCorVermelha);
+                $('#botaoverde').on("click", aplicarCorVerde);
+            })
 	 	</script>        
     </head>
     
